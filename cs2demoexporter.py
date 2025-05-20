@@ -1,6 +1,14 @@
 import sys
 import os
 import subprocess
+from pathlib import Path
+
+#####################################################################################
+# Argument 1 - File name in downloads folder                                        #
+# Argument 2 - What you want the demo to be called                                  #
+#                                                                                   #
+# ex. python cs2demoexporter.py 1-b8305238-6b79-4a6b-b765-a1d282e5f69f-1-1 MyDemo   #
+#####################################################################################
 
 def install_and_import(package):
     try:
@@ -13,6 +21,7 @@ install_and_import("zstandard")
 
 import zstandard as zstd
 
+DOWNLOAD_FILE_PATH = Path.home() / "Downloads"
 OUTPUT_FOLDER_PATH = "C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo"
 
 # take in inputs
@@ -30,7 +39,7 @@ if not output_file_name.endswith('.dem'):
         output_file_name = output_file_name + '.dem'
 
 # build file paths
-input_file_path = os.path.join("C:\\Users\\leifh\\Downloads", input_file)
+input_file_path = os.path.join(DOWNLOAD_FILE_PATH, input_file)
 output_file_path = os.path.join(OUTPUT_FOLDER_PATH, output_file_name)
 
 # extract and export
