@@ -39,7 +39,7 @@ if not output_file_name.endswith('.dem'):
         output_file_name = output_file_name + '.dem'
 
 # build file paths
-input_file_path = os.path.join("C:\\Users\\leifh\\Downloads", input_file)
+input_file_path = os.path.join(DOWNLOAD_FILE_PATH, input_file)
 output_file_path = os.path.join(OUTPUT_FOLDER_PATH, output_file_name)
 
 # extract and export
